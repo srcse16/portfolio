@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shawon Roy - Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    body {
+      padding-top: 70px;
+      background: linear-gradient(135deg, #232526 0%, #414345 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #eee;
+      min-height: 100vh;
+    }
+    .navbar {
+      background: #181d23 !important;
+      box-shadow: 0 2px 12px #000a;
+    }
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 1.6rem;
+      letter-spacing: 0.08em;
+      color: #3399ff !important;
+      text-shadow: 0 2px 8px #3399ff33;
+    }
+    .nav-link.active, .nav-link:focus, .nav-link:hover {
+      color: #0eea3a !important;
+    }
+    .nav
+    main.container {
+      max-width: 950px;
+      margin: 60px auto 80px;
+      background: rgba(30,30,30,0.97);
+      border-radius: 22px;
+      padding: 48px 38px 38px 38px;
+      box-shadow: 0 8px 40px #000b;
+      position: relative;
+    }
+    .cover-photo {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px #3399ff33;
+      margin-bottom: -70px;
+      background: #222;
+      border: 2px solid #292929;
+    }
+    .profile-photo {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid #fff;
+      box-shadow: 0 4px 24px #0eea3a44;
+      margin: -70px auto 0 auto;
+      display: block;
+      background: #222;
+      position: relative;
+      z-index: 2;
+    }
+    h1.name {
+      background: linear-gradient(45deg, #000000, #1a6ed8);
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #efeae9;
+      margin-top: 18px;
+      letter-spacing: 0.08em;
+      text-shadow: 0 2px 8px #3399ff33;
+      user-select: none;
+    }
+    p.description {
+      text-align: center;
+      color: #b6eaff;
+      font-size: 1.18rem;
+      margin-bottom: 32px;
+      margin-top: 10px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+    .social-icons {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .social-icons a {
+      color: #f8fafc;
+      font-size: 1.7rem;
+      margin: 0 12px;
+      transition: color 0.2s;
+    }
+    .social-icons a:hover {
+      color: #0eea3a;
+    }
+    .section-title {
+      color: #fdfdfd;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .overview-section {
+      margin-bottom: 32px;
+    }
+    .overview-box {
+      background: #232526;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px #3399ff22;
+      padding: 18px 22px;
+      margin-bottom: 18px;
+      color: #b6eaff;
+      font-size: 1.07rem;
+      line-height: 1.6;
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+    }
+    .overview-icon {
+      font-size: 2rem;
+      color: #3399ff;
+      margin-right: 10px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 30px;
+      justify-content: center;
+    }
+    .skill-item {
+      background: #232526;
+      color: #b6eaff;
+      border-radius: 12px;
+      padding: 10px 22px;
+      font-size: 1.08rem;
+      font-weight: 600;
+      box-shadow: 0 2px 10px #3399ff22;
+      border: 1.5px solid #3399ff33;
+      transition: background 0.2s, color 0.2s;
+    }
+    .skill-item:hover {
+      background: linear-gradient(45deg, #000000, #1a6ed8);
+      color: #fff;
+    }
+    .project-preview {
+      background: #232526;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px #0eea3a22;
+      padding: 18px 20px;
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      transition: box-shadow 0.2s;
+    }
+    .project-preview:hover {
+      box-shadow: 0 8px 32px #0eea3a55;
+    }
+    .project-thumb {
+      width: 80px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 2px solid #3399ff44;
+      background: #222;
+      flex-shrink: 0;
+    }
+    .project-info {
+      flex: 1;
+    }
+    .project-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #3399ff;
+      margin-bottom: 4px;
+    }
+    .project-desc {
+      color: #b6eaff;
+      font-size: 0.98rem;
+      margin-bottom: 0;
+    }
+    .btn-visit {
+      background: linear-gradient(45deg, #000000, #1a6ed8);
+      border: none;
+      color: white;
+      font-weight: 600;
+      border-radius: 10px;
+      padding: 7px 16px;
+      transition: background-color 0.3s;
+      text-decoration: none;
+      user-select: none;
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 0.98rem;
+    }
+    .btn-visit:hover,
+    .btn-visit:focus {
+      background-color: #0eea3a;
+      color: white;
+      text-decoration: none;
+    }
+    .about-box {
+      background: #232526;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px #3399ff22;
+      padding: 22px 24px;
+      margin-bottom: 30px;
+      color: #b6eaff;
+      font-size: 1.08rem;
+      line-height: 1.7;
+    }
+    .contact-form-section {
+      background: #232526;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px #3399ff22;
+      padding: 22px 24px;
+      margin-top: 32px;
+      color: #b6eaff;
+      font-size: 1.08rem;
+      line-height: 1.7;
+    }
+    .form-label {
+      color: #3399ff;
+      font-weight: 600;
+    }
+    .form-control, .form-control:focus {
+      background: #181d23;
+      color: #eee;
+      border: 1.5px solid #3399ff44;
+      border-radius: 8px;
+      box-shadow: none;
+    }
+    .btn-send {
+      background: linear-gradient(45deg, #000000, #1a6ed8);
+      color: #f9fafa;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 22px;
+      margin-top: 8px;
+      transition: background 0.2s;
+    }
+    .btn-send:hover {
+      background: #3399ff;
+      color: #fff;
+    }
+    .form-message {
+      margin-top: 10px;
+      font-size: 1rem;
+    }
+    footer {
+      background: linear-gradient(45deg, #000000, #1a6ed8);
+      color: #ffffff;
+      padding: 25px 0;
+      text-align: center;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+      user-select: none;
+      margin-top: 40px;
+    }
+    @media (max-width: 767.98px) {
+      main.container {
+        padding: 18px 4px;
+      }
+      .cover-photo {
+        height: 120px;
+      }
+      .profile-photo {
+        width: 90px;
+        height: 90px;
+        margin-top: -45px;
+      }
+      .skills-list {
+        gap: 8px;
+      }
+      .project-thumb {
+        width: 60px;
+        height: 40px;
+      }
+    }
+    @media (max-width: 479.98px) {
+      .cover-photo {
+        height: 70px;
+      }
+      .profile-photo {
+        width: 60px;
+        height: 60px;
+        margin-top: -30px;
+      }
+      .about-box, .project-preview, .overview-box, .contact-form-section {
+        padding: 10px 6px;
+      }
+    }
+  </style>
+  <!-- Firebase SDKs and config -->
+  <script src="https://www.gstatic.com/firebasejs/12.2.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyC-Z3YOqPlInufArtZ_agxt04-bF46MxpY",
+      authDomain: "portfolio-7a29b.firebaseapp.com",
+      projectId: "portfolio-7a29b",
+      storageBucket: "portfolio-7a29b.firebasestorage.app",
+      messagingSenderId: "759556613396",
+      appId: "1:759556613396:web:9a9f6be9567ac66fc54e01"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+  </script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Shawon Roy</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
+        <li class="nav-item"><a class="nav-link" href="work.html">Work</a></li>
+        <li class="nav-item"><a class="nav-link" href="project-list.html">Project List</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="social.html">Social Media</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container" role="main">
+
+  <!-- Cover photo -->
+  <img src="cover.jpeg" alt="Cover Banner" class="cover-photo" />
+
+  <!-- Profile photo and intro -->
+  <img src="Profile.jpeg" alt="Profile Photo" class="profile-photo" />
+  <h1 class="name">SHAWON ROY</h1>
+  <p class="description">
+    Hi, I'm Shawon Roy, a passionate Web & Flutter Developer, Instructor, and Tech Enthusiast. I love building modern web and mobile apps, teaching, and leading teams to success.
+  </p>
+
+  <div class="social-icons">
+    <a href="https://github.com/" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
+    <a href="https://linkedin.com/" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+    <a href="https://facebook.com/" target="_blank" title="Facebook"><i class="bi bi-facebook"></i></a>
+    <a href="mailto:shawon@email.com" title="Email"><i class="bi bi-envelope-fill"></i></a>
+  </div>
+
+  <!-- Overview Section -->
+  <div class="overview-section">
+    <div class="overview-box">
+      <span class="overview-icon"><i class="bi bi-mortarboard-fill"></i></span>
+      <div>
+        <strong>Education:</strong> B.Sc. in Computer Science & Engineering.<br>
+        <a href="education.html" class="btn-visit btn-sm mt-2">See Details</a>
+      </div>
+    </div>
+    <div class="overview-box">
+      <span class="overview-icon"><i class="bi bi-briefcase-fill"></i></span>
+      <div>
+        <strong>Work:</strong> Web & Flutter Developer, Instructor, COO, Founder & CEO.<br>
+        <a href="work.html" class="btn-visit btn-sm mt-2">See Details</a>
+      </div>
+    </div>
+    <div class="overview-box">
+      <span class="overview-icon"><i class="bi bi-folder-fill"></i></span>
+      <div>
+        <strong>Projects:</strong> Club Management System, E-Commerce App, Portfolio Website, and more.<br>
+        <a href="project-list.html" class="btn-visit btn-sm mt-2">See All Projects</a>
+      </div>
+    </div>
+    <div class="overview-box">
+      <span class="overview-icon"><i class="bi bi-people-fill"></i></span>
+      <div>
+        <strong>Social Media:</strong> Connect with me on GitHub, LinkedIn, Facebook.<br>
+        <a href="social.html" class="btn-visit btn-sm mt-2">See Social Links</a>
+      </div>
+    </div>
+    <div class="overview-box">
+      <span class="overview-icon"><i class="bi bi-envelope-fill"></i></span>
+      <div>
+        <strong>Contact:</strong> Email: shawon@email.com<br>
+        <a href="contact.html" class="btn-visit btn-sm mt-2">More Contact Info</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-box">
+    <span class="section-title"><i class="bi bi-person-fill"></i> About Me</span><br>
+    I am a Computer Science graduate with a strong background in web and mobile app development. My expertise includes HTML, CSS, JavaScript, Flutter, Firebase, and modern frameworks. I enjoy solving problems, collaborating with teams, and sharing knowledge as an instructor. My goal is to create impactful digital solutions and inspire others in the tech community.
+  </div>
+
+  <div>
+    <span class="section-title"><i class="bi bi-lightning-fill"></i> Skills</span>
+    <div class="skills-list">
+      <div class="skill-item">HTML5</div>
+      <div class="skill-item">CSS3</div>
+      <div class="skill-item">JavaScript</div>
+      <div class="skill-item">Bootstrap</div>
+      <div class="skill-item">Flutter</div>
+      <div class="skill-item">Firebase</div>
+      <div class="skill-item">Git & GitHub</div>
+      <div class="skill-item">Team Leadership</div>
+      <div class="skill-item">Teaching</div>
+    </div>
+  </div>
+
+  <div>
+    <span class="section-title"><i class="bi bi-briefcase-fill"></i> Featured Projects</span>
+    <div class="project-preview">
+      <img src="priyoCover (1).png" alt="Student Management System" class="project-thumb" />
+      <div class="project-info">
+        <div class="project-title">E-Commerce Mobile App</div>
+        <div class="project-desc">An intuitive Flutter-based e-commerce app designed to provide a seamless shopping experience, featuring easy navigation, secure payment options, and real-time order tracking. It aims to enhance user engagement and streamline online shopping.</div>
+        <a href="project-list.html" class="btn-visit">See All Projects</a>
+      </div>
+    </div>
+    <div class="project-preview">
+      <img src="Smart Semester.png" alt="Flutter E-Commerce App" class="project-thumb" />
+      <div class="project-info">
+        <div class="project-title">Smart Semester</div>
+        <div class="project-desc">A cross-platform mobile app for online shopping, featuring product browsing, cart, and secure checkout.</div>
+        <a href="project-list.html" class="btn-visit">See All Projects</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Form Section -->
+  <div class="contact-form-section mt-4">
+    <span class="section-title"><i class="bi bi-envelope-fill"></i> Send Me an Email</span>
+    <form id="contactForm">
+      <div class="mb-2">
+        <label for="name" class="form-label">Your Name</label>
+        <input type="text" class="form-control" id="name" required />
+      </div>
+      <div class="mb-2">
+        <label for="email" class="form-label">Your Email</label>
+        <input type="email" class="form-control" id="email" required />
+      </div>
+      <div class="mb-2">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-control" id="message" rows="3" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-send">Send</button>
+      <div id="formMessage" class="form-message"></div>
+    </form>
+  </div>
+
+</main>
+
+<footer>
+  <div class="container">© 2025 SR CSE 16 All rights reserved.</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const formMessage = document.getElementById('formMessage');
+    try {
+      await db.collection('contacts').add({
+        name,
+        email,
+        message,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      });
+      formMessage.innerText = "Thank you! Your message has been sent.";
+      formMessage.style.color = "#0eea3a";
+      document.getElementById('contactForm').reset();
+    } catch (err) {
+      formMessage.innerText = "Error sending message. Please try again.";
+      formMessage.style.color = "red";
+      console.error(err);
+    }
+  });
+</script>
+</body>
+</html>

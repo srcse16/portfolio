@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Work History - Digital Tech</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    body {
+      padding-top: 70px;
+      background-color: #121212;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #eee;
+    }
+    .work-header:hover{
+      color: red;
+    }
+      .navbar {
+      background: #181d23 !important;
+      box-shadow: 0 2px 12px #000a;
+    }
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 1.6rem;
+      letter-spacing: 0.08em;
+      color: #3399ff !important;
+      text-shadow: 0 2px 8px #3399ff33;
+    }
+    .nav-link.active, .nav-link:focus, .nav-link:hover {
+      color: #0eea3a !important;
+    }
+    main.container {
+      max-width: 900px;
+      margin: 50px auto 80px;
+      background-color: #1e1e1e;
+      border-radius: 20px;
+      padding: 40px 35px;
+      box-shadow: 0 8px 30px rgb(0 0 0 / 0.8);
+    }
+    h1.work-header {
+      color: #f37806;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 45px;
+      letter-spacing: 0.1em;
+      user-select: none;
+      text-transform: uppercase;
+    }
+    .work-card {
+      background: #2a2a2a;
+      border: none;
+      border-radius: 18px;
+      box-shadow: 0 6px 24px rgb(0 153 255 / 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 30px;
+      height: 100%;
+      color: #ccc;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .work-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 45px rgba(238, 2, 2, 0.95);
+      color: #fff;
+    }
+    .work-icon {
+      font-size: 3.5rem;
+      color: #3399ff;
+      margin-right: 25px;
+      flex-shrink: 0;
+      user-select: none;
+    }
+    .work-duration {
+      font-weight: 600;
+      color: #7da8d9;
+      user-select: text;
+    }
+    .work-responsibilities {
+      margin-top: 15px;
+      color: #bbb;
+      font-size: 1.05rem;
+      line-height: 1.5;
+      user-select: text;
+    }
+    .work-footer {
+      margin-top: 20px;
+      text-align: right;
+    }
+    .btn-visit {
+      background: linear-gradient(45deg, #000000, #1a6ed8);
+      border: none;
+      color: white;
+      font-weight: 600;
+      border-radius: 10px;
+      padding: 8px 18px;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      user-select: none;
+      display: inline-block;
+    }
+    .btn-visit:hover,
+    .btn-visit:focus {
+      background-color: #f37806;
+      color: white;
+      text-decoration: none;
+    }
+    /* Logos section */
+    .logos-section {
+      margin-top: 60px;
+      text-align: center;
+      user-select: none;
+    }
+    .logos-section h2 {
+      color: #f37806;
+      font-weight: 700;
+      margin-bottom: 30px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .logos-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    .logo-item {
+      width: 120px;
+      height: 120px;
+      background: #2a2a2a;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgb(0 105 255 / 0.35);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+    }
+    .logo-item img {
+      max-width: 80%;
+      max-height: 80%;
+      object-fit: contain;
+      filter: drop-shadow(0 0 2px #3399ffaa);
+    }
+    .logo-item:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 40px rgba(245, 31, 3, 0.952);
+    }
+    footer {
+      background: linear-gradient(45deg, #000000, #1a6ed8);
+      color: #ffffff;
+      padding: 25px 0;
+      text-align: center;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+      user-select: none;
+    }
+    @media (max-width: 767.98px) {
+      .work-icon {
+        font-size: 2.8rem;
+        margin-right: 18px;
+      }
+      .logo-item {
+        width: 90px;
+        height: 90px;
+      }
+    }
+    @media (max-width: 479.98px) {
+      main.container {
+        padding: 30px 20px;
+      }
+      .logos-container {
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Shawon Roy</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
+        <li class="nav-item"><a class="nav-link" href="work.html">Work</a></li>
+        <li class="nav-item"><a class="nav-link" href="project-list.html">Project List</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="social.html">Social Media</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container py-5">
+  <h1 class="work-header">My Work History</h1>
+
+  <div class="row g-4">
+    <!-- Online Instructor -->
+    <div class="col-md-6">
+      <div class="card work-card d-flex flex-column">
+        <div class="d-flex align-items-center">
+          <i class="bi bi-person-badge work-icon"></i>
+          <div>
+            <h4 class="mb-1">Online Instructor (Math & CSE) <br>Founder of Math Hackers</h4>
+            <div class="work-duration">2020 – Present</div>
+          </div>
+        </div>
+        <p class="work-responsibilities mt-3">
+          Teaching, tutoring, course creation, content development. Delivering comprehensive math and computer science lessons to diverse student groups through online platforms.
+        </p>
+         <div class="work-footer">
+          <a href="https://www.facebook.com/mathhackersbd" target="_blank" rel="noopener noreferrer" class="btn-visit">Visit Math Hackers</a>
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- Web & Flutter Developer -->
+    <div class="col-md-6">
+      <div class="card work-card d-flex flex-column">
+        <div class="d-flex align-items-center">
+          <i class="bi bi-phone-work work-icon"></i>
+          <div>
+            <h4 class="mb-1">Web & Flutter Mobile App Developer</h4>
+            <div class="work-duration">2022 – Present</div>
+          </div>
+        </div>
+        <p class="work-responsibilities mt-3">
+          Designing and developing responsive web applications and Flutter-based mobile apps. Handling client projects as well as personal ventures focusing on clean UI/UX and performant code.
+        </p>
+        <div class="work-footer">
+          <a href="project-list.html" target="_blank" rel="noopener noreferrer" class="btn-visit">See Project List</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chief Operating Officer -->
+    <div class="col-md-6">
+      <div class="card work-card d-flex flex-column">
+        <div class="d-flex align-items-center">
+          <i class="bi bi-building work-icon"></i>
+          <div>
+            <h4 class="mb-1">Chief Operating Officer</h4>
+            <div class="work-duration">Dot-iT.com.bd (2024 - Present)</div>
+          </div>
+        </div>
+        <p class="work-responsibilities mt-3">
+          Managing company operations, strategizing growth, and overseeing projects to deliver technology solutions aligned with business goals.
+        </p>
+        <div class="work-footer">
+          <a href="https://www.facebook.com/dotitbd10" target="_blank" rel="noopener noreferrer" class="btn-visit">Visit Dot-iT.com.bd</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Founder & CEO -->
+    <div class="col-md-6">
+      <div class="card work-card d-flex flex-column">
+        <div class="d-flex align-items-center">
+          <i class="bi bi-person-workspace work-icon"></i>
+          <div>
+            <h4 class="mb-1">Founder & CEO</h4>
+            <div class="work-duration">Priyorong (Online Business)</div>
+          </div>
+        </div>
+        <p class="work-responsibilities mt-3">
+          Leading the vision and development of Priyorong, driving online business growth and digital marketing strategies to expand reach and revenue.
+        </p>
+        <div class="work-footer">
+          <a href="https://www.facebook.com/priyorongbd" target="_blank" rel="noopener noreferrer" class="btn-visit">Visit Priyorong</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="logos-section">
+    <h2>Work Sector Logos</h2>
+    <div class="logos-container">
+      <div class="logo-item">
+        <img src="Math Hackers.jpg" alt="Education Logo" />
+      </div>
+      <div class="logo-item">
+        <img src="flutter (1).png" alt="Flutter Logo" />
+      </div>
+      <div class="logo-item">
+        <img src="dot it.jpg" alt="Web Development Logo" />
+      </div>
+      <div class="logo-item">
+        <img src="Priyorong.jpg" alt="Web Development Logo" />
+      </div>
+      <!-- Add more logos as needed -->
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">© 2025 SR CSE 16 All rights reserved.</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
